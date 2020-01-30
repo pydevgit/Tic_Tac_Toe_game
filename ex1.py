@@ -1,15 +1,36 @@
 from tkinter import *
 from tkinter import ttk
 from tkinter import messagebox
-root = Tk()
 
+def won_of_player():
+    if (button1['text'] == 'O' and button2['text'] == 'O' and button3['text'] == 'O' or
+            button4['text'] == 'O' and button5['text'] == 'O' and button6['text'] == 'O' or
+            button7['text'] == 'O' and button8['text'] == 'O' and button9['text'] == 'O' or
+            button1['text'] == 'O' and button5['text'] == 'O' and button9['text'] == 'O' or
+            button3['text'] == 'O' and button5['text'] == 'O' and button7['text'] == 'O' or
+            button1['text'] == 'O' and button4['text'] == 'O' and button7['text'] == 'O' or
+            button2['text'] == 'O' and button4['text'] == 'O' and button8['text'] == 'O' or
+            button3['text'] == 'O' and button6['text'] == 'O' and button9['text'] == 'O'):
+              messagebox._show("winner of game", "Player O is winner")
+
+    elif (button1['text'] == 'X' and button2['text'] == 'X' and button3['text'] == 'X' or
+          button4['text'] == 'X' and button5['text'] == 'X' and button6['text'] == 'X' or
+          button7['text'] == 'X' and button8['text'] == 'X' and button9['text'] == 'X' or
+          button1['text'] == 'X' and button5['text'] == 'X' and button9['text'] == 'X' or
+          button3['text'] == 'X' and button5['text'] == 'X' and button7['text'] == 'X' or
+          button1['text'] == 'X' and button4['text'] == 'X' and button7['text'] == 'X' or
+          button2['text'] == 'X' and button4['text'] == 'X' and button8['text'] == 'X' or
+          button3['text'] == 'X' and button6['text'] == 'X' and button9['text'] == 'X'):
+        messagebox._show("winner of game", "Player X is winner")
+
+root = Tk()
 # global variable
 player = 1
+
 
 # by this function adding functional in by button pressed
 def button_Pressed(buttonnumber):
     global player
-
     if buttonnumber == 1 and player == 1:
         button1.config(text='X')
         player = 2
@@ -49,7 +70,7 @@ def button_Pressed(buttonnumber):
         button6.config(text='X')
         player = 2
     elif buttonnumber == 6 and player == 2:
-        button6(text='O')
+        button6.config(text='O')
         player = 1
     elif buttonnumber == 7 and player == 1:
         button7.config(text='X')
@@ -73,8 +94,7 @@ def button_Pressed(buttonnumber):
         player = 1
 
 
-
-#define size of display
+# define size of display
 root.geometry('650x496')
 
 # define a lot of the buttons according to project
