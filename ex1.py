@@ -3,9 +3,10 @@ from tkinter import ttk
 from tkinter import messagebox
 root = Tk()
 
+# global variable
 player = 1
 
-
+# by this function adding functional in by button pressed
 def button_Pressed(buttonnumber):
     global player
 
